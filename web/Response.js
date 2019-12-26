@@ -24,7 +24,7 @@ class Response extends Class
 		super.initProperty();
 		this.request = null;
 		this.response = null;
-		this.RESTful = true;
+		this.RESTful = false;
 		this.formatter = {
 			'application/json': '../formatter/JSON',
 			'application/xml': '../formatter/XML'
