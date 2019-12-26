@@ -61,7 +61,6 @@ class ErrorHandler extends Component
 						response.status = error.status || this.defaultStatus;
 						if(error.message){
 							response.body = {
-								code: error.code || error.status || this.defaultStatus,
 								message: error.message
 							};
 						}
