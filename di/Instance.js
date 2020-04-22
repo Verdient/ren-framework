@@ -5,17 +5,13 @@ const objectHelper = require('../helpers/object');
 const Components = require('../base/Components');
 
 /**
- * Instance
  * 实例
- * --------
  * @author Verdient。
  */
 class Instance extends Base
 {
 	/**
-	 * ensure(String/Object reference)
 	 * 确保是某个实例
-	 * -------------------------------
 	 * @return {Object}
 	 * @author Verdient。
 	 */

@@ -3,21 +3,16 @@
 const Class = require('./Class');
 
 /**
- * DynamicObject
  * 动态对象
- * -------------
  * @author Verdient。
  */
 class DynamicObject extends Class
 {
 	/**
-	 * add(String name, Mixed value)
 	 * 新增属性
-	 * -----------------------------
 	 * @param {String} name 名称
 	 * @param {Mixed} value 值
-	 * -------------------------
-	 * @return {Self}
+	 * @return {DynamicObject}
 	 * @author Verdient。
 	 */
 	add(name, value){

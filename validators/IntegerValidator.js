@@ -3,19 +3,13 @@
 const NumberValidator = require('./NumberValidator');
 
 /**
- * IntegerValidator
  * 整数校验器
- * ----------------
  * @author Verdient。
  */
 class IntegerValidator extends NumberValidator
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
 	 * @return {Self}
 	 * @author Verdient。
 	 */
@@ -23,9 +17,7 @@ class IntegerValidator extends NumberValidator
 		super.initProperty();
 
 		/**
-		 * @property message
-		 * 提示信息
-		 * -----------------
+		 * @property 提示信息
 		 * @author Verdient。
 		 */
 		this.message = '{attribute} must be an integer';
@@ -34,14 +26,7 @@ class IntegerValidator extends NumberValidator
 	}
 
 	/**
-	 * validateValue(Mixed value)
-	 * 校验值
-	 * --------------------------
-	 * @param Mixed value 待校验的值
-	 * ---------------------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Promise}
 	 * @author Verdient。
 	 */
 	validateValue(value){

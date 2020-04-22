@@ -3,22 +3,15 @@
 const Class = require('./Class');
 const InvalidMethodError = require('../errors/InvalidMethodError');
 
-
 /**
- * Script
  * 脚本
- * ------
  * @author Verdient。
  */
 class Script extends Class
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
+	 * @return {Script}
 	 * @author Verdient。
 	 */
 	initProperty(){
@@ -28,10 +21,8 @@ class Script extends Class
 	}
 
 	/**
-	 * run()
 	 * 运行
-	 * -----
-	 * @throws InvalidMethodError
+	 * @throws {InvalidMethodError}
 	 * @author Verdient。
 	 */
 	run(){

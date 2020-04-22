@@ -1,20 +1,15 @@
 'use strict'
 
 /**
- * BaseError
- * 错误
- * ---------
+ * 基础错误
  * @author Verdient。
  */
 class BaseError extends Error
 {
 	/**
-	 * constructor(String message, Mixed data)
-	 * 构造函数
-	 * ---------------------------------------
+	 * @method 构造函数
 	 * @param {String} message 错误信息
 	 * @param {Mixed} data 附加的数据
-	 * -------------------------------
 	 * @author Verdient。
 	 */
 	constructor(message, data){
@@ -23,9 +18,7 @@ class BaseError extends Error
 	}
 
 	/**
-	 * @getter data
-	 * 获取数据
-	 * ------------
+	 * @getter 获取数据
 	 * @return {Mixed}
 	 * @author Verdient。
 	 */
@@ -34,9 +27,7 @@ class BaseError extends Error
 	}
 
 	/**
-	 * @getter type()
-	 * 获取错误类型
-	 * --------------
+	 * @getter 获取错误类型
 	 * @return {String}
 	 * @author Verdient。
 	 */

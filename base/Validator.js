@@ -1,122 +1,79 @@
 'use strict'
 
 const Class = require('./Class');
-const objectHelper = require('../helpers/object');
 const Instance = require('../di/Instance');
 const UnprocessableEntityError = require('../web/errors/UnprocessableEntityError');
+const objectHelper = require('../helpers/object');
 
 /**
- * Validator
  * 校验器
- * ---------
  * @author Verdient。
  */
 class Validator extends Class
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @property attribute
-		 * 属性
-		 * -------------------
+		 * @property 属性
 		 * @author Verdient。
 		 */
 		this.attribute = 'attribute';
 
 		/**
-		 * @property required
-		 * 是否必须
-		 * ------------------
+		 * @property 是否不允许为空
 		 * @author Verdient。
 		 */
 		this.required = false;
 
 		/**
-		 * @property skipOnError
-		 * 是否在错误时跳过
-		 * ---------------------
+		 * @property 是否在错误时跳过
 		 * @author Verdient。
 		 */
 		this.skipOnError = false;
 
 		/**
-		 * @property beforeValidate
-		 * 执行校验前的操作
-		 * ------------------------
-		 * @author Verdient。
-		 */
-		this.beforeValidate = null;
-
-		/**
-		 * @property afterValidate
-		 * 执行校验后的操作
-		 * -----------------------
-		 * @author Verdient。
-		 */
-		this.afterValidate = null;
-
-		/**
-		 * @property export
-		 * 导出
-		 * ----------------
+		 * @property 导出
 		 * @author Verdient。
 		 */
 		this.export = false;
 
 		/**
-		 * @property when
-		 * 校验执行时机
-		 * --------------
+		 * @property 校验执行时机
 		 * @author Verdient。
 		 */
 		this.when = null;
 
 		/**
-		 * @property exports
-		 * 导出
-		 * -----------------
+		 * @property 导出
 		 * @author Verdient。
 		 */
 		this.exports = {};
 
 		/**
-		 * @property empty
-		 * 字段为空时的提示信息
-		 * -----------------
+		 * @property 字段为空时的提示信息
 		 * @author Verdient。
 		 */
 		this.empty = '{attribute} can not be blank';
 
 		/**
-		 * @property messageType
-		 * 提示消息类型
-		 * ---------------------
+		 * @property 提示消息类型
 		 * @author Verdient。
 		 */
 		this.messageType = 'validator';
 
 		/**
-		 * @property i18n
-		 * 多国语组件
-		 * --------------
+		 * @property 多国语组件
 		 * @author Verdient。
 		 */
 		this.i18n = 'i18n';
 
 		/**
-		 * @property _error
-		 * 错误信息
-		 * ----------------
+		 * @property 错误信息
 		 * @author Verdient。
 		 */
 		this._error = null;
@@ -125,12 +82,7 @@ class Validator extends Class
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	init(){
@@ -140,11 +92,8 @@ class Validator extends Class
 	}
 
 	/**
-	 * isEmpty(Mixed value)
 	 * 判断是否为空
-	 * --------------------
 	 * @param {Mixed} value
-	 * --------------------
 	 * @return {Boolean}
 	 * @author Verdient。
 	 */
@@ -163,11 +112,9 @@ class Validator extends Class
 	}
 
 	/**
-	 * @setter error(Mixed error)
 	 * 设置错误
-	 * --------------------------
-	 * @param Mixed error 错误信息
-	 * --------------------------
+	 * @setter error
+	 * @param {Mixed} error 错误信息
 	 * @author Verdient。
 	 */
 	set error(error){
@@ -185,9 +132,8 @@ class Validator extends Class
 	}
 
 	/**
-	 * @getter error()
 	 * 获取错误
-	 * ---------------
+	 * @getter error
 	 * @return {Error}
 	 * @author Verdient。
 	 */
@@ -196,9 +142,7 @@ class Validator extends Class
 	}
 
 	/**
-	 * hasError()
 	 * 是否有错误
-	 * ------------
 	 * @return {Boolean}
 	 * @author Verdient。
 	 */
@@ -207,12 +151,9 @@ class Validator extends Class
 	}
 
 	/**
-	 * validateAttribute(Object model, String attribute)
 	 * 校验属性
-	 * -------------------------------------------------
 	 * @param {Object} model 模型
 	 * @param {String} attribute 属性名
-	 * -------------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
@@ -225,11 +166,8 @@ class Validator extends Class
 	}
 
 	/**
-	 * validate(Mixed value)
 	 * 校验
-	 * ---------------------
 	 * @param {Mixed} value 待校验的值
-	 * ------------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
@@ -254,11 +192,8 @@ class Validator extends Class
 	}
 
 	/**
-	 * validateValue(Mixed value)
 	 * 校验值
-	 * --------------------------
-	 * @param Mixed value 待校验的值
-	 * ---------------------------
+	 * @param {Mixed} value 待校验的值
 	 * @return {Promise}
 	 * @author Verdient。
 	 */

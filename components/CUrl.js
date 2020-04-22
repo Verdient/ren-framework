@@ -8,20 +8,13 @@ const httpHelper = require('../helpers/http');
 const InvalidParamError = require('../errors/InvalidParamError');
 
 /**
- * CUrl
- * CUrl 组件
- * ---------
+ * CUrl组件
  * @author Verdient。
  */
 class CUrl extends Component
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
@@ -47,15 +40,12 @@ class CUrl extends Component
 	}
 
 	/**
-	 * _normalizeOptions(Object options)
 	 * 规格化参数
-	 * ---------------------------------
 	 * @param {Object} options 参数
-	 * ----------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
-	_normalizeOptions(options){
+	normalizeOptions(options){
 		return new Promise((resolve, revoke) => {
 			for(let i in options){
 				if(options[i] === null){
@@ -92,18 +82,15 @@ class CUrl extends Component
 	}
 
 	/**
-	 * _request(Object options)
 	 * 请求
-	 * ------------------------
 	 * @param {Object} options 参数
-	 * ----------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
 	_request(options){
 		return new Promise((resolve, revoke) => {
 			setTimeout(() => {
-				this._normalizeOptions(options).then(options => {
+				this.normalizeOptions(options).then(options => {
 					Request(options, (error, response) => {
 						if(error){
 							this.warning({options, error}, 'CUrl');
@@ -130,18 +117,15 @@ class CUrl extends Component
 	}
 
 	/**
-	 * @getter instance()
 	 * 获取实例
-	 * ------------------
+	 * @getter instance
 	 * @return {Self}
 	 * @author Verdient。
 	 */
 	get instance(){
 
 		/**
-		 * _options
 		 * 参数
-		 * ---------
 		 * @author Verdient。
 		 */
 		this._options = {

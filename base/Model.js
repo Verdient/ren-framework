@@ -1,23 +1,19 @@
 'use strict'
 
 const Component = require('./Component');
+const FatalError = require('../errors/FatalError');
 const Validators = require('./Validators');
 const objectHelper = require('../helpers/object');
 const asyncHelper = require('../helpers/async');
-const FatalError = require('../errors/FatalError');
 
 /**
- * Model
  * 基本模型
- * ---------
  * @author Verdient。
  */
 class Model extends Component
 {
 	/**
-	 * constructor()
-	 * 构造函数
-	 * -------------
+	 * @inheritdoc
 	 * @return {Proxy}
 	 * @author Verdient。
 	 */
@@ -42,45 +38,32 @@ class Model extends Component
 	}
 
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @property _attributes
-		 * 属性
-		 * ---------------------
+		 * @property 属性
 		 * @author Verdient。
 		 */
 		this._attributes = {};
 
 		/**
-		 * @property _oldAttributes
-		 * 旧属性
-		 * ------------------------
+		 * @property 原来的属性
 		 * @author Verdient。
 		 */
 		this._oldAttributes = {};
 
 		/**
-		 * @property scenario
-		 * 场景
-		 * ------------------
+		 * @property 场景
 		 * @author Verdient。
 		 */
 		this.scenario = null;
 
 		/**
-		 * @property _scenarioRules
-		 * 场景规则
-		 * ------------------------
+		 * @property 场景规则
 		 * @author Verdient。
 		 */
 		this._scenarioRules = {};
@@ -89,9 +72,7 @@ class Model extends Component
 	}
 
 	/**
-	 * scenarioRules()
 	 * 获取场景规则
-	 * ---------------
 	 * @return {Array}
 	 * @author Verdient。
 	 */
@@ -122,14 +103,17 @@ class Model extends Component
 		return this._scenarioRules[this.scenario];
 	}
 
+	/**
+	 * 活跃的属性
+	 * @return {Array}
+	 * @auhtor Verdient。
+	 */
 	get activeAttributes(){
 		return Object.keys(this.scenarioRules);
 	}
 
 	/**
-	 * rules()
 	 * 规则集合
-	 * -------
 	 * @return {Object}
 	 * @author Verdient。
 	 */
@@ -138,12 +122,9 @@ class Model extends Component
 	}
 
 	/**
-	 * load(Object $data)
 	 * 载入数据
-	 * ------------------
 	 * @param {Object} data 数据
-	 * -------------------------
-	 * @return {Self}
+	 * @return {Model}
 	 * @author Verdient。
 	 */
 	load(data){
@@ -156,12 +137,9 @@ class Model extends Component
 	}
 
 	/**
-	 * populate(Object data)
-	 * 数据落入模型
-	 * ---------------------
+	 * 数据填入模型
 	 * @param {Object} data 数据
-	 * -------------------------
-	 * @return {Self}
+	 * @return {Model}
 	 * @author Verdient。
 	 */
 	populate(data){
@@ -173,9 +151,7 @@ class Model extends Component
 	}
 
 	/**
-	 * validate()
 	 * 校验
-	 * ----------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
@@ -214,9 +190,8 @@ class Model extends Component
 	}
 
 	/**
-	 * @getter attributes()
 	 * 获取属性
-	 * --------------------
+	 * @getter attributes
 	 * @return {Object}
 	 * @author Verdient。
 	 */
@@ -225,9 +200,8 @@ class Model extends Component
 	}
 
 	/**
-	 * @getter oldAttributes()
-	 * 获取旧属性
-	 * -----------------------
+	 * 获取原来的属性
+	 * @getter oldAttributes
 	 * @return {Object}
 	 * @author Verdient。
 	 */
@@ -236,9 +210,8 @@ class Model extends Component
 	}
 
 	/**
-	 * @getter dirtyAttributes()
-	 * 获取变化的字段
-	 * -------------------------
+	 * 获取变化的属性
+	 * @getter dirtyAttributes
 	 * @return {Array}
 	 * @author Verdient。
 	 */
@@ -253,9 +226,8 @@ class Model extends Component
 	}
 
 	/**
-	 * @getter dirtyValues()
 	 * 获取变化的值
-	 * ---------------------
+	 * @getter dirtyValues
 	 * @return {Object}
 	 * @author Verdient。
 	 */

@@ -3,19 +3,14 @@
 const Class = require('./Class');
 
 /**
- * Validators
  * 校验器集合
- * ----------
  * @author Verdient。
  */
 class Validators extends Class
 {
 	/**
-	 * register(Object options)
 	 * 注册校验器
-	 * ------------------------
 	 * @param {Object} options 校验器集合
-	 * --------------------------------
 	 * @author Verdient。
 	 */
 	static register(options){
@@ -29,12 +24,9 @@ class Validators extends Class
 	}
 
 	/**
-	 * getValidator(String name, Object options)
 	 * 获取校验器
-	 * -----------------------------------------
 	 * @param {name} name 校验器名称
 	 * @param {Object} options 校验器参数
-	 * --------------------------------
 	 * @return {Validator}
 	 * @author Verdient。
 	 */
@@ -48,9 +40,7 @@ class Validators extends Class
 	}
 
 	/**
-	 * getValidators()
 	 * 获取校验器集合
-	 * ---------------
 	 * @return {Object}
 	 * @author Verdient。
 	 */

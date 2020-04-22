@@ -6,45 +6,32 @@ const asyncHelper = require('../helpers/async');
 const randomHelper = require('../helpers/random');
 
 /**
- * Pool
  * 池
- * ----
  * @author Verdient。
  */
 class Pool extends Component
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @property redis
-		 * Redis组件
-		 * ---------------
+		 * @property Redis组件
 		 * @author Verdient。
 		 */
 		this.redis = 'redis';
 
 		/**
-		 * @property prefix
-		 * 前缀
-		 * ----------------
+		 * @property 前缀
 		 * @author Verdient。
 		 */
 		this.prefix = 'pool_for_';
 
 		/**
-		 * removeExpiredInterval
-		 * 移除过期元素时间间隔
-		 * ---------------------
+		 * @property 移除过期元素时间间隔
 		 * @author Verdient。
 		 */
 		this.removeExpiredInterval = 100;
@@ -53,12 +40,7 @@ class Pool extends Component
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	init(){
@@ -66,9 +48,7 @@ class Pool extends Component
 		this.redis = Instance.ensure(this.redis).client;
 
 		/**
-		 * removeExpired
 		 * 移除过期的元素
-		 * -------------
 		 * @author Verdient。
 		 */
 		let removeExpired = () => {
@@ -101,13 +81,10 @@ class Pool extends Component
 	}
 
 	/**
-	 * add(String name, Mixed value, Integer expires)
 	 * 加入池
-	 * ----------------------------------------------
 	 * @param {String} name 名称
 	 * @param {Mixed} value 内容
 	 * @param {Integer} expires 过期时间
-	 * --------------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
@@ -129,11 +106,8 @@ class Pool extends Component
 	}
 
 	/**
-	 * get(String name)
 	 * 获取
-	 * ----------------
 	 * @param {String} name 名称
-	 * ------------------------
 	 * @return {Mixed}
 	 * @author Verdient。
 	 */
@@ -159,12 +133,9 @@ class Pool extends Component
 	}
 
 	/**
-	 * delete(String name, Mixed value)
 	 * 删除
-	 * --------------------------------
 	 * @param {String} name 名称
 	 * @param {Mixed} value 内容
-	 * ------------------------
 	 * @return {Self}
 	 * @author Verdient。
 	 */
@@ -185,11 +156,8 @@ class Pool extends Component
 	}
 
 	/**
-	 * size(String name)
 	 * 获取池的大小
-	 * -----------------
 	 * @param {String} name 名称
-	 * ------------------------
 	 * @return {Integer}
 	 * @author Verdient。
 	 */
@@ -207,11 +175,8 @@ class Pool extends Component
 	}
 
 	/**
-	 * flush(String name)
 	 * 刷新
-	 * ------------------
 	 * @param {String} name 名称
-	 * ------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */

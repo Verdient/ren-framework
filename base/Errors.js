@@ -4,18 +4,14 @@ const BaseError = require('../base/BaseError');
 const objectHelper = require('../helpers/object');
 
 /**
- * Errors
  * 错误集合
- * -------
  * @author Verdient。
  */
 class Errors
 {
 	/**
-	 * constructor()
 	 * 构造函数
-	 * -------------
-	 * @return {Self}
+	 * @return {Errors}
 	 * @author Verdient。
 	 */
 	constructor(){
@@ -24,13 +20,10 @@ class Errors
 	}
 
 	/**
-	 * addError(String name, Mixed error)
 	 * 新增错误
-	 * ----------------------------------
 	 * @param {String} name 名称
 	 * @param {Mixed} error 错误信息
-	 * ----------------------------
-	 * @return {Self}
+	 * @return {Errors}
 	 * @author Verdient。
 	 */
 	addError(name, error){
@@ -42,9 +35,8 @@ class Errors
 	}
 
 	/**
-	 * @getter errors()
 	 * 获取错误
-	 * ----------------
+	 * @getter errors
 	 * @return Object
 	 * @author Verdient。
 	 */
@@ -53,10 +45,8 @@ class Errors
 	}
 
 	/**
-	 * hasErrors()
 	 * 是否有错误
-	 * -----------
-	 * @return Boolean
+	 * @return {Boolean}
 	 * @author Verdient。
 	 */
 	hasErrors(){
@@ -64,12 +54,9 @@ class Errors
 	}
 
 	/**
-	 * getError(String name)
 	 * 获取错误
-	 * ---------------------
 	 * @param {String} name 名称
-	 * -------------------------
-	 * @return {String/Null}
+	 * @return {String|Null}
 	 * @author Verdient。
 	 */
 	getError(name){
@@ -77,9 +64,7 @@ class Errors
 	}
 
 	/**
-	 * getFirstError()
 	 * 获取第一个错误
-	 * ---------------
 	 * @return {Mixed}
 	 * @author Verdient。
 	 */
@@ -91,12 +76,9 @@ class Errors
 	}
 
 	/**
-	 * toOneDimension(Errors errors)
 	 * 转为一维
-	 * -----------------------------
 	 * @param Errors errors 错误集合
-	 * ----------------------------
-	 * @return Array
+	 * @return {Array}
 	 * @author Verdient。
 	 */
 	toOneDimension(errors){

@@ -4,18 +4,13 @@ const Module = require('./Module');
 const Instance = require('../di/Instance');
 
 /**
- * Component
  * 组件
- * ---------
  * @author Verdient。
  */
 class Component extends Module
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
-	 * @return {Self}
+	 * @inheritdoc
 	 * @author Verdient。
 	 */
 	initProperty(){
@@ -25,10 +20,7 @@ class Component extends Module
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
-	 * @return {Self}
+	 * @inheritdoc
 	 * @author Verdient。
 	 */
 	init(){
@@ -37,12 +29,9 @@ class Component extends Module
 	}
 
 	/**
-	 * trace(Mixed data, String category)
-	 * 追踪
-	 * ----------------------------------
+	 * 追踪日志
 	 * @param {Mixed} data 数据
 	 * @param {String} category 分类
-	 * ----------------------------
 	 * @author Verdient。
 	 */
 	trace(data, category){
@@ -50,12 +39,9 @@ class Component extends Module
 	}
 
 	/**
-	 * info(Mixed data, String category)
-	 * 信息
-	 * ---------------------------------
+	 * 信息日志
 	 * @param {Mixed} data 数据
 	 * @param {String} category 分类
-	 * ----------------------------
 	 * @author Verdient。
 	 */
 	info(data, category){
@@ -63,12 +49,9 @@ class Component extends Module
 	}
 
 	/**
-	 * warning(Mixed data, String category)
-	 * 警告
-	 * ------------------------------------
+	 * 警告日志
 	 * @param {Mixed} data 数据
 	 * @param {String} category 分类
-	 * ----------------------------
 	 * @author Verdient。
 	 */
 	warning(data, category){
@@ -76,12 +59,9 @@ class Component extends Module
 	}
 
 	/**
-	 * error(Mixed data, String category)
-	 * 错误
-	 * ----------------------------------
+	 * 错误日志
 	 * @param {Mixed} data 数据
 	 * @param {String} category 分类
-	 * ----------------------------
 	 * @author Verdient。
 	 */
 	error(data, category){

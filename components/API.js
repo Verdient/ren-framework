@@ -4,61 +4,44 @@ const Component = require('../base/Component');
 const Instance = require('../di/Instance');
 
 /**
- * API
  * 接口组件
- * -------
  * @author Verdient。
  */
 class API extends Component
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @property host
-		 * 主机
-		 * --------------
+		 * @property 主机
 		 * @author Verdient。
 		 */
 		this.host = '127.0.0.1';
 
 		/**
-		 * @property port
-		 * 端口
-		 * --------------
+		 * @property 端口
 		 * @author Verdient。
 		 */
 		this.port = null;
 
 		/**
-		 * @property protocol
-		 * 协议
-		 * ------------------
+		 * @property 协议
 		 * @author Verdient。
 		 */
 		this.protocol = 'http';
 
 		/**
-		 * @property cUrl
-		 * CUrl组件
-		 * --------------
+		 * @property CUrl组件
 		 * @author Verdient。
 		 */
 		this.cUrl = 'cUrl';
 
 		/**
-		 * @property prefix
-		 * 前缀
-		 * ----------------
+		 * @property 前缀
 		 * @author Verdient。
 		 */
 		this._prefix = this.protocol + '://' + this.host;
@@ -67,12 +50,7 @@ class API extends Component
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	init(){
@@ -89,9 +67,8 @@ class API extends Component
 	}
 
 	/**
-	 * @getter prefix()
 	 * 获取前缀
-	 * ----------------
+	 * @getter prefix
 	 * @author Verdient。
 	 */
 	get prefix(){
@@ -99,9 +76,8 @@ class API extends Component
 	}
 
 	/**
-	 * @getter cUrlInstance()
 	 * 获取CUrl实例
-	 * ----------------------
+	 * @getter cUrlInstance
 	 * @return {CUrl}
 	 * @author Verdient。
 	 */

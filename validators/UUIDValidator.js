@@ -4,37 +4,26 @@ const Validator = require('../base/Validator');
 const InvalidConfigError = require('../errors/InvalidConfigError');
 
 /**
- * UUIDValidator
  * UUID校验器
- * -------------
  * @author Verdient。
  */
 class UUIDValidator extends Validator
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @var version
-		 * 版本
-		 * ------------
+		 * @property 版本
 		 * @author Verdient。
 		 */
 		this.version = null;
 
 		/**
-		 * @var patterns
-		 * 正则
-		 * -------------
+		 * @property 正则
 		 * @author Verdient。
 		 */
 		this.patterns = {
@@ -46,9 +35,7 @@ class UUIDValidator extends Validator
 		};
 
 		/**
-		 * @var message
-		 * 错误信息
-		 * ------------
+		 * @property 错误信息
 		 * @author Verdient。
 		 */
 		this.message = '{attribute} is not a valid uuid{version}';
@@ -57,14 +44,7 @@ class UUIDValidator extends Validator
 	}
 
 	/**
-	 * validateValue(Mixed value)
-	 * 校验值
-	 * --------------------------
-	 * @param Mixed value 待校验的值
-	 * ---------------------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Promise}
 	 * @author Verdient。
 	 */
 	validateValue(value){

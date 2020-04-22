@@ -4,20 +4,15 @@ const Errors = require('./Errors');
 const InvalidParamError = require('../errors/InvalidParamError');
 
 /**
- * Base
- * 基类
- * -----
+ * 基础对象
  * @author Verdient。
  */
 class Base
 {
 	/**
-	 * constructor(Object options)
 	 * 构造函数
-	 * ---------------------------
 	 * @param {Object} options 参数
-	 * ---------------------------
-	 * @return {Self}
+	 * @return {Base}
 	 * @author Verdient。
 	 */
 	constructor(options){
@@ -29,10 +24,8 @@ class Base
 	}
 
 	/**
-	 * initCoreProperty()
 	 * 初始化核心属性
-	 * ------------
-	 * @return {Self}
+	 * @return {Base}
 	 * @author Verdient。
 	 */
 	initCoreProperty(){
@@ -49,9 +42,7 @@ class Base
 	}
 
 	/**
-	 * initProperty()
 	 * 初始化属性
-	 * --------------
 	 * @return {Self}
 	 * @author Verdient。
 	 */
@@ -60,12 +51,9 @@ class Base
 	}
 
 	/**
-	 * injectionProperty(Object options)
 	 * 属性注入
-	 * ---------------------------------
 	 * @param {Object} options 属性
-	 * ---------------------------
-	 * @return {Self}
+	 * @return {Base}
 	 * @author Verdient。
 	 */
 	injectionProperty(options){
@@ -79,21 +67,16 @@ class Base
 	}
 
 	/**
-	 * init()
 	 * 初始化
-	 * ------
-	 * @return {Self}
+	 * @return {Base}
 	 * @author Verdient。
 	 */
 	init(){
-		this.trigger(this.EVENT_INIT);
 		return this;
 	}
 
 	/**
-	 * className()
 	 * 获取类名
-	 * -----------
 	 * @return {String}
 	 * @author Verdient。
 	 */
@@ -102,9 +85,7 @@ class Base
 	}
 
 	/**
-	 * className()
 	 * 获取类名
-	 * -----------
 	 * @return {String}
 	 * @author Verdient。
 	 */
@@ -113,13 +94,10 @@ class Base
 	}
 
 	/**
-	 * addError(String name, Error error)
 	 * 添加错误
-	 * ----------------------------------
 	 * @param {String} name 名称
 	 * @param {Error} error 错误
-	 * -------------------------
-	 * @return {Self}
+	 * @return {Base}
 	 * @author Verdient。
 	 */
 	addError(name, error){
@@ -128,9 +106,7 @@ class Base
 	}
 
 	/**
-	 * hasErrors()
 	 * 是否有错误
-	 * -----------
 	 * @return {Boolean}
 	 * @author Verdient。
 	 */
@@ -139,9 +115,8 @@ class Base
 	}
 
 	/**
-	 * @getter errors()
 	 * 获取错误
-	 * ----------------
+	 * @getter errors
 	 * @return {Errors}
 	 * @author Verdient。
 	 */
@@ -150,11 +125,8 @@ class Base
 	}
 
 	/**
-	 * createObject(String/Array options)
 	 * 创建对象
-	 * ----------------------------------
-	 * @param {String/Array} options 参数
-	 * ---------------------------------
+	 * @param {String|Array} options 参数
 	 * @return {Object}
 	 * @author Verdient。
 	 */

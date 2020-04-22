@@ -5,22 +5,17 @@ const InvalidParamError = require('../errors/InvalidParamError');
 const asyncHelper = require('../helpers/async');
 
 /**
- * Event
  * 事件
- * -----
  * @author Verdient。
  */
 class Event
 {
 	/**
-	 * on(String className, String event, Callable handler)
 	 * 事件挂载
-	 * ----------------------------------------------------
 	 * @param {String} className 类名称
 	 * @param {String} event 事件名称
 	 * @param {Callable} handler 处理器
-	 * -------------------------------
-	 * @throws InvalidParamError
+	 * @throws {InvalidParamError}
 	 * @author Verdient。
 	 */
 	static on(className, event, handler){
@@ -37,13 +32,10 @@ class Event
 	}
 
 	/**
-	 * off(String className, String event, Callable handler)
 	 * 事件移除
-	 * -----------------------------------------------------
 	 * @param {String} className 类名称
 	 * @param {String} event 事件名称
 	 * @param {Callable} handler 处理器
-	 * -------------------------------
 	 * @author Verdient。
 	 */
 	static off(className, event, handler){
@@ -57,13 +49,10 @@ class Event
 	}
 
 	/**
-	 * trigger(String className, String event, Mixed ...params)
-	 * 事件触发
-	 * --------------------------------------------------
+	 * 触发事件
 	 * @param {String} className 类名称
 	 * @param {String} event 事件名称
 	 * @param {Mixed} params 参数
-	 * -------------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */

@@ -6,45 +6,32 @@ const Instance = require('../di/Instance');
 const InvalidParamError = require('../errors/InvalidParamError');
 
 /**
- * Lock
  * 锁
- * ----
  * @author Verdient。
  */
 class Lock extends Component
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @property duration
-		 * 生存周期
-		 * ------------------
+		 * @property 生存周期
 		 * @author Verdient。
 		 */
 		this.duration = 60000;
 
 		/**
-		 * @property redis
-		 * redis组件
-		 * ---------------
+		 * @property redis组件
 		 * @author Verdient。
 		 */
 		this.redis = 'redis';
 
 		/**
-		 * @property prefix
-		 * 前缀
-		 * ----------------
+		 * @property 前缀
 		 * @author Verdient。
 		 */
 		this.prefix = 'lock_for_';
@@ -53,11 +40,7 @@ class Lock extends Component
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
 	 * @return {Self}
 	 * @author Verdient。
 	 */
@@ -68,13 +51,10 @@ class Lock extends Component
 	}
 
 	/**
-	 * lock(String name, Integer expires)
 	 * 上锁
-	 * ---------------------------------
 	 * @param {String} name 锁名称
 	 * @param {Integer} expires 过期时间
-	 * --------------------------------
-	 * @author fzm_csb
+	 * @author Verdient。
 	 */
 	lock(name, expires){
 		return new Promise((resolve, revoke) => {
@@ -101,12 +81,9 @@ class Lock extends Component
 	}
 
 	/**
-	 * release(String name, String key)
 	 * 释放锁
-	 * --------------------------------
 	 * @param {String} name 锁名称
 	 * @param {String} key 锁钥匙
-	 * --------------------------
 	 * @author Verdient。
 	 */
 	release(name, key){

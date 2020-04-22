@@ -3,20 +3,13 @@
 const Validator = require('../base/Validator');
 
 /**
- * ExistValidator
  * 存在校验器
- * --------------
  * @author Verdient。
  */
 class ExistValidator extends Validator
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
@@ -30,6 +23,10 @@ class ExistValidator extends Validator
 		return this;
 	}
 
+	/**
+	 * @inheritdoc
+	 * @author Verdient。
+	 */
 	async validateValue(value){
 		let query = this.targetModel.find();
 		let where = {};

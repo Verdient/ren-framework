@@ -4,29 +4,20 @@ const Base = require('./Base');
 const Event = require('./Event');
 
 /**
- * Class
  * 类
- * -----
  * @author Verdient。
  */
 class Class extends Base
 {
 	/**
-	 * initCoreProperty()
-	 * 初始化核心属性
-	 * ------------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initCoreProperty(){
 		super.initCoreProperty();
 
 		/**
-		 * @constant EVENT_INIT
-		 * 初始化
-		 * --------------------
+		 * @event 初始化
 		 * @author Verdient。
 		 */
 		this.EVENT_INIT = 'init';
@@ -35,10 +26,8 @@ class Class extends Base
 	}
 
 	/**
-	 * initEvents()
-	 * 初始化事件
-	 * ------------
-	 * @return {Self}
+	 * @method 初始化事件
+	 * @return {Class}
 	 * @author Verdient。
 	 */
 	initEvents(){
@@ -55,23 +44,17 @@ class Class extends Base
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	init(){
 		this.initEvents();
+		this.trigger(this.EVENT_INIT);
 		return super.init();
 	}
 
 	/**
-	 * events()
 	 * 事件设置
-	 * --------
 	 * @return {Object}
 	 * @author Verdient。
 	 */
@@ -80,12 +63,9 @@ class Class extends Base
 	}
 
 	/**
-	 * trigger(String event, Callable handler)
-	 * 事件挂载
-	 * ---------------------------------------
+	 * 挂载事件
 	 * @param {String} event 事件
 	 * @param {Callable} handler 处理器
-	 * -------------------------------
 	 * @author Verdient。
 	 */
 	on(event, handler){
@@ -93,12 +73,9 @@ class Class extends Base
 	}
 
 	/**
-	 * trigger(String event, Mixed ...params)
-	 * 事件触发
-	 * --------------------------------------
+	 * 触发事件
 	 * @param {String} event 事件
 	 * @param {Mixed} params 参数
-	 * -------------------------
 	 * @author Verdient。
 	 */
 	trigger(event, ...params){
