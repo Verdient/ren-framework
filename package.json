@@ -1,6 +1,6 @@
 {
 	"name": "ren-framework",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Ren Framework",
 	"main": "index.js",
 	"keywords": [
@@ -15,6 +15,7 @@
 		"cli-color": "^1.4.0",
 		"mysql2": "^1.6.4",
 		"redis": "^2.8.0",
+		"uuid": "^8.0.0",
 		"xmlbuilder": "^10.1.1"
 	}
 }
