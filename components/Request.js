@@ -33,6 +33,26 @@ class Client extends Component
 	}
 
 	/**
+	 * 设置请求方式
+	 * @param {String} method 请求方式
+	 * @return {Request}
+	 * @auhtor Verdient。
+	 */
+	set method(method){
+		this._method = method.toUpperCase();
+		return this;
+	}
+
+	/**
+	 * 获取请求方式
+	 * @return {String}
+	 * @author Verdient。
+	 */
+	get method(){
+		return this._method;
+	}
+
+	/**
 	 * 设置地址链接
 	 * @param {String} url 地址链接
 	 * @return {Request}
