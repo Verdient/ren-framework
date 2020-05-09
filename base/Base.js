@@ -125,6 +125,22 @@ class Base
 	}
 
 	/**
+	 * 休眠
+	 * @param {Number} time 毫秒时长
+	 * @return {Promise}
+	 * @author Verdient。
+	 */
+	sleep(time){
+		return new Promise(resolve => {
+			if(time <= 0){
+				resolve();
+			}else{
+				setTimeout(resolve, time);
+			}
+		});
+	}
+
+	/**
 	 * 创建对象
 	 * @param {String|Array} options 参数
 	 * @return {Object}

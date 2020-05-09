@@ -11,29 +11,20 @@ const Response = require('../Response');
 const ResponseHandler = require('./ResponseHandler');
 
 /**
- * RequestHandler
  * 请求处理器
- * --------------
  * @author Verdient。
  */
 class RequestHandler extends Component
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @var errorHandler
-		 * 错误处理器
-		 * -----------------
+		 * @var 错误处理器
 		 * @author Verdient。
 		 */
 		this.errorHandler = {};
@@ -42,11 +33,7 @@ class RequestHandler extends Component
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
 	 * @author Verdient。
 	 */
 	init(){
@@ -60,12 +47,9 @@ class RequestHandler extends Component
 	}
 
 	/**
-	 * handle(IncomingMessage request, ServerResponse response)
 	 * 处理
-	 * --------------------------------------------------------
 	 * @param {IncomingMessage} request 请求对象
 	 * @param {ServerResponse} response 响应对象
-	 * ----------------------------------------
 	 * @author Verdient。
 	 */
 	handle(request, response){
@@ -84,12 +68,9 @@ class RequestHandler extends Component
 	}
 
 	/**
-	 * handleRequest(IncomingMessage request, ServerResponse response)
 	 * 处理请求
-	 * ---------------------------------------------------------------
 	 * @param {IncomingMessage} request 请求对象
 	 * @param {ServerResponse} response 响应对象
-	 * ----------------------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
@@ -124,11 +105,8 @@ class RequestHandler extends Component
 	}
 
 	/**
-	 * handleError(DynamicObject ctx)
 	 * 处理错误
-	 * ------------------------------
 	 * @param {DynamicObject} ctx 响应对象
-	 * ----------------------------------
 	 * @return {Promise}
 	 * @author Verdient。
 	 */
@@ -143,11 +121,8 @@ class RequestHandler extends Component
 	}
 
 	/**
-	 * handleResponse(DynamicObject ctx)
 	 * 处理响应
-	 * ---------------------------------
 	 * @param {DynamicObject} ctx 上下文
-	 * --------------------------------
 	 * @author Verdient。
 	 */
 	handleResponse(ctx){
@@ -155,11 +130,8 @@ class RequestHandler extends Component
 	}
 
 	/**
-	 * serialize(Mixed value)
 	 * 序列化
-	 * ----------------------
 	 * @param {Mixed} value 待序列化的数据
-	 * ---------------------------------
 	 * @return {Object}
 	 * @author Verdient。
 	 */

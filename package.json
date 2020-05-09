@@ -1,23 +1,20 @@
 {
 	"name": "ren-framework",
-	"version": "0.0.1",
-	"description": "RenJieLi Framework",
+	"version": "0.0.2",
+	"description": "Ren Framework",
 	"main": "index.js",
 	"keywords": [
 		"Framework",
-		"RenJieLi",
+		"Ren",
 		"QingTong"
 	],
+	"repository": "https://github.com/Verdient/ren-framework.git",
 	"author": "Verdient.",
 	"license": "ISC",
 	"dependencies": {
-		"async": "^2.6.1",
 		"cli-color": "^1.4.0",
-		"form-data": "^2.3.3",
-		"moment": "^2.23.0",
 		"mysql2": "^1.6.4",
 		"redis": "^2.8.0",
-		"request": "^2.88.0",
 		"xmlbuilder": "^10.1.1"
 	}
 }

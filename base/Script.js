@@ -1,13 +1,13 @@
 'use strict'
 
-const Class = require('./Class');
+const Component = require('./Component');
 const InvalidMethodError = require('../errors/InvalidMethodError');
 
 /**
  * 脚本
  * @author Verdient。
  */
-class Script extends Class
+class Script extends Component
 {
 	/**
 	 * @inheritdoc

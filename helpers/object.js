@@ -159,11 +159,22 @@ let ksort = (data, compareFunction) => {
 	return result;
 }
 
+/**
+ * 克隆对象
+ * @param {Object} object 被克隆的对象
+ * @return {Object}
+ * @author Verdient。
+ */
+let clone = (object) => {
+	return JSON.parse(JSON.stringify(object));
+}
+
 module.exports = {
 	type,
 	isPlainObject,
 	isEmptyObject,
 	merge,
 	inArray,
-	ksort
+	ksort,
+	clone
 }

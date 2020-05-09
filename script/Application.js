@@ -7,20 +7,13 @@ const coreConfig = require('../base/config');
 const objectHelper = require('../helpers/object');
 
 /**
- * Application
  * 应用
- * -----------
  * @author Verdient。
  */
 class Application extends Base
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
@@ -30,12 +23,7 @@ class Application extends Base
 	}
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	init(){
@@ -46,9 +34,7 @@ class Application extends Base
 	}
 
 	/**
-	 * run()
 	 * 运行
-	 * -----
 	 * @author Verdient。
 	 */
 	run(){
@@ -63,7 +49,7 @@ class Application extends Base
 							new Script({
 								components: this.components
 							}).run();
-							logger.info(i + ' job started', i);
+							logger.info(i + ' job started', 'Application');
 						}else if(typeof this.scripts[i] == 'object'){
 							if(typeof this.scripts[i].module == 'undefined'){
 								throw new Error('Scripts module must be set');
@@ -72,21 +58,21 @@ class Application extends Base
 							new Script(objectHelper.merge(this.scripts[i], {
 								components: this.components
 							})).run();
-							logger.info(i + ' job started', i);
+							logger.info(i + ' job started', 'Application');
 						}else{
 							throw new Error('Please check you config.');
 						}
 					}
 				}
 			}else{
-				logger.warning('no scripts', 'Scripts');
+				logger.warning('no scripts', 'Application');
 				process.exit();
 			}
 		}else{
 			commands = Array.from(new Set(commands));
 			commands.forEach(script => {
 				if(!this.scripts[script]){
-					logger.error('Script ' + script + ' is undefined.', 'Scripts');
+					logger.error('Script ' + script + ' is undefined.', 'Application');
 					process.exit();
 				}
 			});
@@ -96,7 +82,7 @@ class Application extends Base
 					if(typeof script.init == 'function'){
 						script.init();
 					}
-					logger.info(scriptName + ' job started', scriptName);
+					logger.info(scriptName + ' job started', 'Application');
 				}else if(typeof this.scripts[scriptName] == 'object'){
 					if(typeof this.scripts[scriptName].module == 'undefined'){
 						throw new Error('Scripts module must be set');
@@ -110,7 +96,7 @@ class Application extends Base
 					if(typeof script.init == 'function'){
 						script.init();
 					}
-					logger.info(scriptName + ' job started', scriptName);
+					logger.info(scriptName + ' job started', 'Application');
 				}else{
 					throw new Error('Please check you config.');
 				}

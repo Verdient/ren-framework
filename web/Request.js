@@ -242,7 +242,7 @@ class Request extends Class
 				if(this.parser[contentType]){
 					let parser = require(this.parser[contentType]);
 					try{
-						this._body = parser(this.request.body);
+						this._body = parser(this.rawBody);
 					}catch(e){
 						this.addError('parse request', new BadRequestError(e.message));
 					}
@@ -252,6 +252,16 @@ class Request extends Class
 			}
 		}
 		return this._body;
+	}
+
+	/**
+	 * 获取原始消息体
+	 * @getter rawBody
+	 * @return {String}
+	 * @author Verdient。
+	 */
+	get rawBody(){
+		return this.request.body;
 	}
 
 	/**

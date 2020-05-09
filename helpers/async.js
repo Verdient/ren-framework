@@ -1,16 +1,13 @@
 'use strict'
 
 /**
- * eachSeries(Object tasks, Callable callback)
  * 按顺序执行
- * -------------------------------------------
  * @param {Object} tasks 任务集合
- * @param {Callable} callback 回调函数
- * ----------------------------------
+ * @param {Callable} iteratee 回调函数
  * @return {Promise}
  * @author Verdient。
  */
-let eachSeries = (tasks, callback) => {
+let eachSeries = (tasks, iteratee) => {
 	return new Promise((resolve, revoke) => {
 		let tasksSet = [];
 		for(let key in tasks){
@@ -22,7 +19,7 @@ let eachSeries = (tasks, callback) => {
 		let length = tasksSet.length;
 		let run = (n) => {
 			let task = tasksSet[n];
-			callback(task.value, task.key, (error) => {
+			iteratee(task.value, task.key, (error) => {
 				if(error){
 					revoke(error);
 				}else if(n < length - 1){
@@ -42,39 +39,62 @@ let eachSeries = (tasks, callback) => {
 }
 
 /**
- * each(Object tasks, Callable callback)
  * 同时执行
- * -------------------------------------
  * @param {Object} tasks 任务集合
- * @param {Callable} callback 回调函数
- * ----------------------------------
+ * @param {Callable} iteratee 回调函数
  * @return {Promise}
  * @author Verdient。
  */
-let each = (tasks, callback) => {
-	let count = tasks.length;
-	let n = 0;
+let each = (tasks, iteratee) => {
 	return new Promise((resolve, revoke) => {
+		let count = tasks.length;
 		if(count === 0){
 			resolve();
 		}else{
-			tasks.forEach((element, index) => {
-				callback(element, index, (error) => {
+			let n = 0;
+			for(let i = 0; i < count; i++){
+				let element = tasks[i];
+				iteratee(element, i, (error) => {
+					n++;
 					if(error){
 						revoke(error);
 					}else{
-						n++;
 						if(n === count){
 							resolve();
 						}
 					}
 				});
-			});
+			}
+		}
+	});
+}
+
+let times = (times, iteratee) => {
+	return new Promise((resolve, revoke) => {
+		if(times <= 0){
+			resolve([]);
+		}else{
+			let n = 0;
+			let results = {};
+			for(let i = 1; i <= times; i++){
+				iteratee(i, (error, result) => {
+					n++;
+					if(error){
+						revoke(error);
+					}else{
+						results[i] = result;
+						if(n >= times){
+							resolve(Object.values(results));
+						}
+					}
+				});
+			}
 		}
 	});
 }
 
 module.exports = {
 	eachSeries,
-	each
+	each,
+	times
 }
