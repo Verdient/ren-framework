@@ -1,6 +1,6 @@
 'use strict'
 
-const uuidV1 = require('uuid/v1');
+const {v1: uuidV1} = require('uuid');
 const Component = require('../base/Component');
 const Instance = require('../di/Instance');
 const InvalidParamError = require('../errors/InvalidParamError');
