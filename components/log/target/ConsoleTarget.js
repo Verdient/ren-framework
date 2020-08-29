@@ -5,50 +5,33 @@ const LoggerTarget = require('./LoggerTarget');
 const DateHelper = require('../../../helpers/date');
 
 /**
- * ConsoleTarget
  * 打印目标
- * -------------
  * @author Verdient。
  */
 class ConsoleTarget extends LoggerTarget
 {
 	/**
-	 * initProperty()
-	 * 初始化属性
-	 * --------------
 	 * @inheritdoc
-	 * -----------
-	 * @return {Self}
 	 * @author Verdient。
 	 */
 	initProperty(){
 		super.initProperty();
 
 		/**
-		 * @property levelMap
-		 * 等级映射
-		 * ------------------
+		 * @var {Map} 等级映射
 		 * @author Verdient。
 		 */
 		this.levelMap = new Map();
-		this.levelMap.set('trace', {logger: console.log, color: 'bgGreenBright'});
-		this.levelMap.set('info', {logger: console.info, color: 'bgBlueBright'});
-		this.levelMap.set('warning', {logger: console.warn, color: 'bgYellowBright'});
-		this.levelMap.set('error', {logger: console.error, color: 'bgRedBright'});
+		this.levelMap.set('trace', {logger: console.log, color: 'greenBright'});
+		this.levelMap.set('info', {logger: console.info, color: 'blueBright'});
+		this.levelMap.set('warning', {logger: console.warn, color: 'yellowBright'});
+		this.levelMap.set('error', {logger: console.error, color: 'redBright'});
 
 		return this;
 	}
 
 	/**
-	 * log(String level, Mixed data, String category)
-	 * 记录日志
-	 * ----------------------------------------------
-	 * @param {String} level 等级
-	 * @param {Mixed} data 数据
-	 * @param {String} category 分类
-	 * -----------------------------
 	 * @inheritdoc
-	 * -----------
 	 * @author Verdient。
 	 */
 	log(level, data, category){
@@ -68,9 +51,9 @@ class ConsoleTarget extends LoggerTarget
 			let logger = options.logger;
 			let color = options.color;
 			process.stdout.write(
-				cliColor.bgMagenta(DateHelper.time2str('yyyy-MM-dd hh:mm:ss', Date.now())) +
+				DateHelper.time2str('yyyy-MM-dd hh:mm:ss', Date.now()) +
 				' ' + cliColor[color]('[' + level + ']') + ' ' +
-				cliColor.bgRed('[' + category + ']') + ' '
+				cliColor.red('[' + category + ']') + ' '
 			);
 			logger(data);
 			if(level === 'error'){
